@@ -1,0 +1,65 @@
+.todo__footer{
+    border-bottom: 0px;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+    z-index: 0;
+    background-color: #fff;
+    position: relative;
+}
+
+.todo__footer .footer__inner{
+    display: flex;
+    padding: 20px 0px;
+}
+
+.todo__footer .footer__inner > div{
+    flex: 1
+}
+
+.todo__footer .footer__inner > div:first-child{
+    text-align: left;
+    padding-left: 75px;
+    margin-top: 10px;
+}
+
+.todo__footer button {
+    padding: 5px 9px;
+    background: #fff;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    font-family: 'Segoe UI';
+    font-size: 16px;
+    color: #989898;
+}
+
+.todo__footer button:active, .todo__footer button:focus {
+    border-color: #ffc0c0;
+    outline: none;
+}
+
+
+
+.todo__footer:after,
+.todo__footer:before {
+    content: '';
+    position: absolute;
+    background-color: #ffffff;
+    display: block;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+    height: 5px;
+    z-index: -2;
+    bottom: -47px;
+    left: 0;
+    right: 0;
+}
+
+.todo__footer:before {
+    width: 98%;
+    z-index: -1;
+    bottom: -5px;
+}
+
+.todo__footer:after {
+    width: 95%;
+    bottom: -10px;
+}
