@@ -63,7 +63,7 @@ class App extends Component {
       <div className="App">
         <h2 className="title">todos</h2>
         <Input 
-          saveTodoItem={this.saveTodoItem} 
+          submit={this.saveTodoItem} 
           value={this.state.todoInput} 
           onChange={(e) => {
             this.setState({
