@@ -1,36 +1,27 @@
 import React, { Component } from 'react';
+import './CheckBox.css'
 
 class CheckBox extends Component {
 
-    constructor(props){
-        super(props)
-
-        this.toogleItemCompletedState = this.toogleItemCompletedState.bind(this)
-        this.state = {
-            checkboxState: 'container'
-        }
+    toogleItemCompletedState = event => {        
+        this.props.toggleCheckBoxState(this.props.elementindex)
     }
 
-    toogleItemCompletedState(e){
-       
-        const checkboxState = e.target.className === 'container' ? 'container active' : 'container';
-        
-        this.setState({
-            checkboxState: checkboxState
-        })
-    }
+    render(){
 
-    render(){   
-
-        const { todoInputText, elementIndex } = this.props;
+        const { todoInputText, elementIndex, completed } = this.props;
         
         return (
-            <label className={this.state.checkboxState} data-id={elementIndex} onClick={this.toogleItemCompletedState}>
-                <span className="">{todoInputText}</span>
+            <label 
+                className={ completed ? 'checkbx__cont active': 'checkbx__cont' } 
+                data-id={ elementIndex } 
+                onClick={ this.toogleItemCompletedState }
+            >
+                <span className=""> { todoInputText } </span>
                 <span className="checkmark"></span>
             </label>
         );
     }
 }
 
-export default CheckBox
+export default CheckBox;

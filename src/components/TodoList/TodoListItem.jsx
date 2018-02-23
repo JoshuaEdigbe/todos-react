@@ -1,35 +1,30 @@
-import React, { Component } from 'react';
+import React from 'react';
 import CheckBox from '../CheckBox/CheckBox';
 
 
-class TodoListItem extends Component {
+const TodoListItem = ({ todoInputText, elementIndex, toogleItemCompletedState, completed, deleteItem }) => {
+
+    return (
+        <li>
+            <div>
+                <CheckBox 
+                    todoInputText={ todoInputText } 
+                    toggleCheckBoxState={ toogleItemCompletedState }
+                    completed={ completed }
+                    elementindex={ elementIndex }
+                />
+            </div>
+            <div>
+                <button 
+                    className="delete_todo_task__btn" 
+                    elementindex={ elementIndex }  
+                    onClick={ (e) => { deleteItem(e) } }>
+                        X
+                </button>
+            </div>
+        </li>
+    );
     
-    constructor(props){
-        super();
-        this.deleteItem = this.deleteItem.bind(this);
-    }
-
-    deleteItem(e){
-        this.props.deleteItem(e)
-    }
-
-    render(){
-        
-        const { todoInput, elementIndex } = this.props;
-
-        return (
-            <li>
-                <div>
-                    <CheckBox 
-                        todoInputText={todoInput} 
-                    />
-                </div>
-                <div>
-                    <button className="delete-todo-task-btn" elementindex={elementIndex}  onClick={this.deleteItem}>X</button>
-                </div>
-            </li>
-        );
-    }
 
 }
 

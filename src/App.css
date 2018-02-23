@@ -1,11 +1,11 @@
 .App {
   text-align: center;
   padding: 30px 15%;
+  font-family: 'Segoe UI';
 }
 
 .App .title{
     font-size: 4rem;
-    font-family: 'Segoe UI';
     font-weight: lighter;
-    color: #ff9090
+    color: #ff9090;
 }
