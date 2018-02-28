@@ -1,5 +1,6 @@
 import React from 'react';
 import TodoListItem from '../TodoList/TodoListItem';
+import PropTypes from "prop-types";
 import './TodoList.css' 
 
 
@@ -11,7 +12,7 @@ const TodoList = ({deleteItem, toggleCheckBoxState, todos }) => {
         elementIndex={ todoItem.id }
         deleteItem={ deleteItem }
         todoInputText={ todoItem.todoInput }
-        toogleItemCompletedState={ toggleCheckBoxState }
+        toggleCheckBoxState={ toggleCheckBoxState }
         completed={ todoItem.completed }
       /> 
   ));
@@ -26,6 +27,18 @@ const TodoList = ({deleteItem, toggleCheckBoxState, todos }) => {
     </div>
   );
   
+}
+
+TodoList.proTypes = {
+  toggleCheckBoxState: PropTypes.string.isRequired,
+  deleteItem: PropTypes.func.isRequired,
+  todos: PropTypes.arrayOf(PropTypes.shape({
+    todoInput: PropTypes.string.isRequired,
+    completed: PropTypes.bool.isRequired,
+    id: PropTypes.number.isRequired,
+    alltodos: PropTypes.array.isRequired,
+    checkBoxState: PropTypes.string.isRequired
+  }))
 }
 
 export default TodoList;
