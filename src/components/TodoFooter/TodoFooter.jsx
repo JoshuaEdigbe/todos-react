@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import './TodoFooter.css';
 
 const TodoFooter = ({ todos, displayAllActiveTodos, displayAllTodos, displayCompletedTodos, deleteAllCompletedTodos }) => (
-
     <div className="todo__footer">
         <div className="footer__inner">
             <div>
@@ -16,25 +15,25 @@ const TodoFooter = ({ todos, displayAllActiveTodos, displayAllTodos, displayComp
                 <span>
                     <button 
                         className="active"
-                        onClick={()=> displayAllTodos()}
+                        onClick={displayAllTodos}
                     >
                         All
                     </button>
                 </span>
                 <span>
-                    <button onClick={()=> displayAllActiveTodos()}>
+                    <button onClick={displayAllActiveTodos}>
                         Active
                     </button>
                 </span>
                 <span>
-                    <button onClick={()=> displayCompletedTodos()}>
+                    <button onClick={displayCompletedTodos}>
                         Completed
                     </button>
                 </span>
             </div>
             <div>
                 <span>
-                    <button onClick={()=> deleteAllCompletedTodos()}>
+                    <button onClick={deleteAllCompletedTodos}>
                         Clear completed
                     </button>
                 </span>
