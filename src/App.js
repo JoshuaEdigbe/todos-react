@@ -91,7 +91,6 @@ class App extends Component {
     })
   }
 
-
   displayAllTodos = () => {
     this.setState({
       todos: this.state.allTodos
