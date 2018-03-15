@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './Input.css';
 
 const Input = ({submit, value, onChange}) =>(
@@ -9,5 +10,11 @@ const Input = ({submit, value, onChange}) =>(
         </form>
     </div>
 );
+
+Input.propTypes = {
+    submit: PropTypes.func.isRequired,
+    value: PropTypes.string.isRequired,
+    onChange: PropTypes.func.isRequired,
+}
 
 export default Input;
